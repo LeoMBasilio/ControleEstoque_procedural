@@ -46,7 +46,7 @@ def select(id = ''):
     cursor.execute('''
         SELECT * FROM Produtos WHERE id = ? or name = ?
     ''', (id, id))
-    data = cursor.fetchone()
+    data = cursor.fetchall()
     conn.close()
     return data
 
