@@ -54,8 +54,8 @@ def update(name, quantidade, valor, id = ''):
     conn = Conn()
     cursor = conn.cursor()
     cursor.execute('''
-        UPDATE Produtos SET name = ?, quantidade = ?, valor = ? WHERE id = ?
-    ''', (name, quantidade, valor, id))
+        UPDATE Produtos SET name = ?, quantidade = ?, valor = ? WHERE id = ? or name = ?
+    ''', (name, quantidade, valor, id, id))
     conn.commit()
     conn.close()
 
